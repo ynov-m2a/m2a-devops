@@ -96,3 +96,16 @@ resource "azurerm_linux_virtual_machine" "production_vm" {
     public_key = file("~/.ssh/id_rsa.pub")
   }
 }
+
+resource "azurerm_dev_test_global_vm_shutdown_schedule" "autoshutdown" {
+  virtual_machine_id = azurerm_linux_virtual_machine.production_vm.id
+  location           = azurerm_resource_group.rg.location
+  enabled            = true
+
+  daily_recurrence_time = "1700"
+  timezone              = "Romance Standard Time"
+
+  notification_settings {
+    enabled         = false
+  }
+}
