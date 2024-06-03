@@ -5,11 +5,12 @@ terraform {
       version = "~>3.0"
     }
   }
-  backend "azurerm" {
-      resource_group_name  = "m2a-tfstate-rg"
-      storage_account_name = "m2atfstate28351"
-      container_name       = "tfstate"
-      key                  = "terraform.tfstate"
+  cloud {
+    organization = "M2A"
+
+    workspaces {
+      name = "m2a-workspace"
+    }
   }
 }
 
