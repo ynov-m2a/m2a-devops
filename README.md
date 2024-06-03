@@ -8,7 +8,6 @@
 
 ## Steps
 - `terraform init`
-- `az login`
 - `terraform login`
 - `terraform apply` > `yes`
 
