@@ -48,6 +48,12 @@ jobs:
           admin: 'false'
           use-kubelogin: 'true'
 
+      - name: Install CRDs
+        uses: Azure/k8s-deploy@v5
+        with:
+          action: deploy
+          manifests: https://github.com/kubernetes-sigs/gateway-api/releases/download/v1.1.0/standard-install.yaml
+          
       # Deploys application based on given manifest file
       - name: Deploys application
         uses: Azure/k8s-deploy@v5
