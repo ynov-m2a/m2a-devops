@@ -9,6 +9,8 @@
 ## Steps
 - `terraform init`
 - `terraform login`
+- `terraform validate`
+If you want to apply only the aks module : 
 - `terraform apply` > `yes`
 
 ## Terraform Cloud
