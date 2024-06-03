@@ -9,3 +9,7 @@ variable "username" {
   default     = "lucas"
   description = "VM principal username."
 }
+
+variable "ssh_pub_key" {
+  type  = string
+}
