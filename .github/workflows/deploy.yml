@@ -10,7 +10,6 @@ on:
 env:
   RESOURCE_GROUP: "m2a-aks-resources"
   CLUSTER_NAME: "m2a-aks"
-  DEPLOYMENT_MANIFEST_PATH: "./kubernetes/gateway.yml"
 
 jobs:
   deploy:
@@ -54,4 +53,4 @@ jobs:
         with:
           action: deploy
           manifests: |
-            ${{ env.DEPLOYMENT_MANIFEST_PATH }}
+            "./kubernetes/"

@@ -44,9 +44,3 @@ data "azurerm_public_ip" "aks-pip" {
   name                = reverse(split("/", tolist(azurerm_kubernetes_cluster.aks-cluster.network_profile.0.load_balancer_profile.0.effective_outbound_ips)[0]))[0]
   resource_group_name = azurerm_kubernetes_cluster.aks-cluster.node_resource_group
 }
-
-resource "azurerm_application_load_balancer" "alb" {
-  name                = "alb"
-  resource_group_name = azurerm_resource_group.aks-rg.name
-  location            = azurerm_resource_group.aks-rg.location
-}
