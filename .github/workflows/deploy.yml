@@ -46,6 +46,9 @@ jobs:
           cluster-name: ${{ env.CLUSTER_NAME }}
           admin: 'false'
           use-kubelogin: 'true'
+      
+      - name: Create GH Token
+        run: kubectl create secret docker-registry ghcr-login-secret --docker-server=https://ghcr.io --docker-username=${{ secrets.REGISTRY_USERNAME }} --docker-password=${{ secrets.REGISTRY_TOKEN }} --docker-email=${{ secrets.REGISTRY_USER_EMAIL }}
           
       # Deploys application based on given manifest file
       - name: Deploys application
