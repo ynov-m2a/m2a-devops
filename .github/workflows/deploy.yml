@@ -8,8 +8,8 @@ on:
       - completed
 
 env:
-  RESOURCE_GROUP: "m2a-aks-resources"
-  CLUSTER_NAME: "m2a-aks"
+  RESOURCE_GROUP: ${{ vars.AKS_RG }}
+  CLUSTER_NAME: ${{ vars.AKS_CLUSTER }}
 
 jobs:
   deploy:
