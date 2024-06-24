@@ -18,7 +18,12 @@ metadata:
 spec:
   type: LoadBalancer
   ports:
-    - targetPort: web
+    - name: web
+      targetPort: web
       port: 80
+    - protocol: TCP
+      port: 443
+      name: websecure
+      targetPort: 443
   selector:
     app: traefik
