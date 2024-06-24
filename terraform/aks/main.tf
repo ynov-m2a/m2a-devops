@@ -24,10 +24,11 @@ resource "azurerm_kubernetes_cluster" "aks-cluster" {
   dns_prefix          = "aks-dns-prefix"
 
   default_node_pool {
-    name           = "akspool"
-    node_count     = 1
-    vm_size        = "Standard_B2ms"
-    vnet_subnet_id = azurerm_subnet.aks-subnet.id
+    name                        = "akspool"
+    node_count                  = 1
+    vm_size                     = "Standard_B2ms"
+    vnet_subnet_id              = azurerm_subnet.aks-subnet.id
+    temporary_name_for_rotation = "akspool_temp"
   }
 
   identity {
