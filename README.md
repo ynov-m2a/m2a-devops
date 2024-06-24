@@ -20,3 +20,6 @@ If you want to apply only the aks module :
 
 ## GitHub Actions
 - Create a TF_API_TOKEN secret in Github Actions variables
+
+## Get secret from one SA
+- `kubectl get secret team-alpha-secret -n m2a-alpha -o jsonpath="{.data.token}" | base64 --decode`
