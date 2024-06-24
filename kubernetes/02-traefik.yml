@@ -24,6 +24,7 @@ spec:
             - --providers.kubernetesingress
             - --entryPoints.websecure.address=:443
             - --entryPoints.websecure.http.tls
+            - --entryPoints.web.address=:80
           ports:
             - name: websecure
               containerPort: 443
