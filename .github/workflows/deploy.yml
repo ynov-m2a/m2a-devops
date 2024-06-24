@@ -47,6 +47,12 @@ jobs:
           cluster-name: ${{ env.CLUSTER_NAME }}
           admin: 'false'
           use-kubelogin: 'true'
+      
+      - name: Install cert-manager
+        uses: Azure/k8s-deploy@v5
+        with:
+          action: deploy
+          manifests: https://github.com/cert-manager/cert-manager/releases/download/v1.15.0/cert-manager.yaml
           
       # Deploys application based on given manifest file
       - name: Deploys application
