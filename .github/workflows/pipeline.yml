@@ -10,7 +10,7 @@ env:
   TF_CLOUD_ORGANIZATION: "M2A"
   TF_API_TOKEN: "${{ secrets.TF_API_TOKEN }}"
   TF_WORKSPACE: "m2a-workspace"
-  CONFIG_DIRECTORY: "./"
+  CONFIG_DIRECTORY: "./" 
 
 jobs:
   terraform:
